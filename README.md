@@ -2,7 +2,7 @@
 
 App móvil de uso personal para sesiones de spinning: genera la música desde tu Spotify ajustada por BPM a cada bloque del entrenamiento y añade un coach de voz que te dice cuándo levantarte, sentarte o apretar rueda.
 
-> Estado: **diseño y especificación**. Todavía no hay código.
+> Estado: **fase 0 (pruebas de concepto)**. Plataforma: iOS nativo, Swift + SwiftUI.
 
 ## Cómo funciona en una frase
 
@@ -20,6 +20,7 @@ Eliges una **combinación** (tipo de entrenamiento + mezcla musical, p. ej. «HI
 | [Motor](docs/motor.md) | Importación y BPM, generación, renovación, cobertura y Last.fm |
 | [Sesión en vivo](docs/sesion-en-vivo.md) | Reproducción, sincronización y voz del coach |
 | [Plan y riesgos](docs/plan.md) | Fases de implementación y riesgos |
+| [Fase 0](docs/fase-0.md) | Preparación (Spotify Dashboard, Xcode) y las tres pruebas de concepto |
 | [Decisiones](docs/decisiones.md) | Registro de decisiones con su motivo |
 
 ## Datos
@@ -29,6 +30,10 @@ Eliges una **combinación** (tipo de entrenamiento + mezcla musical, p. ej. «HI
 - [`data/recetas.xlsx`](data/recetas.xlsx) — la misma información en hoja de cálculo editable, con control de que cada receta cuadra al minuto.
 
 `recetas.xlsx` es la fuente para revisar y editar; los JSON son lo que consume el código. Si cambias la hoja, regenera los JSON.
+
+## Herramientas
+
+- [`tools/bpm_coverage.py`](tools/bpm_coverage.py) — mide qué parte de tu biblioteca de Spotify tiene BPM y si cubre las recetas de 60′ (fase 0, prueba 2).
 
 ## Diseño UX
 

@@ -4,6 +4,7 @@ Decisiones de producto y diseño tomadas, con su motivo. Las más recientes arri
 
 | # | Fecha | Decisión | Motivo |
 |---|---|---|---|
+| 17 | 2026-10-23 | Plataforma: iOS nativo (Swift + SwiftUI) | Lo difícil es nativo (App Remote, audio en segundo plano, *ducking*, tiempos precisos); SDK oficial de Spotify; abre Live Activities y Apple Watch; Android no es necesario |
 | 16 | 2026-10-23 | Documentación y datos en este repositorio (`docs/`, `data/`) | Un único sitio versionado para spec y datos que consume el código |
 | 15 | 2026-10-23 | Continuo conserva la subida, pero en versión suave (rueda 5–6) | Rompe la monotonía sin convertir el continuo en fuerza |
 | 14 | 2026-10-23 | La última subida de Escalada es un remate a rueda 8–9, «la que pueda» | Cierre exigente adaptable a cada persona |

@@ -42,11 +42,16 @@ flowchart LR
 - **Aislar a Spotify detrás de un cliente propio.** Spotify ha recortado su API dos veces (noviembre de 2024 y febrero de 2026); un único módulo cliente limita el impacto del siguiente cambio.
 - **Servicios externos opcionales donde se pueda.** Last.fm y el TTS de calidad son mejoras: si fallan, la app sigue funcionando (sin ampliación automática; con la voz del sistema).
 
-## Pregunta abierta: plataforma
+## Plataforma: iOS nativo (Swift + SwiftUI)
 
-| Opción | A favor | En contra |
+Decidido el 23-10-2026 ([decisión 17](decisiones.md)). Mínimo iOS 17.
+
+| | iOS nativo (elegido) | React Native (descartado) |
 |---|---|---|
-| iOS nativo (Swift) | Mejor control de la sesión de audio en segundo plano y del *ducking*; SDK de Spotify iOS oficial | Solo iPhone |
-| React Native | Un código para iOS y Android | El audio en segundo plano y el App Remote dependen de módulos nativos de terceros |
+| SDK de Spotify | Oficial (App Remote) | Sin SDK oficial; envoltorios de la comunidad o módulo nativo propio |
+| Audio en segundo plano y *ducking* | Control directo con `AVAudioSession` | Depende de módulos nativos; el hilo JS puede suspenderse con la pantalla bloqueada |
+| Precisión de los avisos del coach | Programables en el motor de audio | Sujeta al hilo JS |
+| Extras | Live Activities (bloque y cuenta atrás en pantalla de bloqueo y Dynamic Island), Apple Watch + HealthKit | Posibles, con más trabajo nativo |
+| Alcance | Solo iPhone | iOS y Android |
 
-Recomendación: iOS nativo para v1, porque el riesgo técnico principal está en el audio en segundo plano (ver [Sesión en vivo](sesion-en-vivo.md)).
+El código Swift vivirá en `ios/`.

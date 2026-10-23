@@ -4,9 +4,11 @@
 
 Cada fase termina con un criterio comprobable. La fase 0 existe para matar pronto los tres riesgos que podrían tumbar el proyecto.
 
+Plataforma: iOS nativo (Swift + SwiftUI).
+
 | Fase | Alcance | Criterio de salida |
 |---|---|---|
-| 0 · Pruebas de concepto | OAuth + App Remote reproduciendo una playlist · BPM de ReccoBeats sobre la biblioteca real · voz con *ducking* sobre Spotify con la pantalla bloqueada | ≥ 80 % de la biblioteca con BPM · 60′ de voz sobre Spotify en segundo plano sin cortes |
+| 0 · Pruebas de concepto ([detalle](fase-0.md)) | OAuth + App Remote reproduciendo una playlist · BPM de ReccoBeats sobre la biblioteca real · voz con *ducking* sobre Spotify con la pantalla bloqueada | ≥ 80 % de la biblioteca con BPM · 60′ de voz sobre Spotify en segundo plano sin cortes |
 | 1 · Datos | Importación, BPM en segundo plano, carga de `data/*.json`, mezclas sugeridas y manuales | Biblioteca importada y mezclas creadas desde la app |
 | 2 · Motor y playlists | Generación por bloque, combinaciones, renovación con diff | «Renovar» crea o actualiza la playlist y cada fase cuadra a ±90 s |
 | 3 · Sesión en vivo | Pantalla en sesión, reloj, saltos por recorte, guion y voz del coach | Sesión de 60′ completa con desfase < 5 s |
@@ -28,7 +30,6 @@ Cada fase termina con un criterio comprobable. La fase 0 existe para matar pront
 
 ## Preguntas abiertas
 
-- Plataforma: iOS nativo (recomendado) o React Native. Ver [Arquitectura](arquitectura.md).
 - ¿Se permite corregir a mano el BPM de un tema?
 - ¿Tipo «Recuperación» en una versión posterior?
 - ¿Bloque de «saltos» (alternar sentado/de pie cada 4–8 tiempos)?
