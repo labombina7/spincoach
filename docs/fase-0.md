@@ -48,6 +48,13 @@ Abre el navegador para autorizar, importa tus canciones guardadas y tus playlist
 
 API de ReccoBeats confirmada el 23-10-2026: `GET https://api.reccobeats.com/v1/audio-features?ids=<IDs de Spotify>`, sin autenticación; cada elemento de `content` trae `href` (enlace al tema en Spotify) y `tempo`. **Rechaza (403, error 1010 de Cloudflare) el User-Agent por defecto de Python**: hay que enviar uno propio, también desde la app iOS. El nº máximo de IDs por petición sigue por confirmar (el script usa 40). El script guarda una respuesta cruda en `tools/out/reccobeats_muestra.json`. Los resultados (`tools/out/`) no se suben al repositorio.
 
+### Resultado de la primera ejecución (23-10-2026)
+
+- 459 temas importados, **251 con BPM en ReccoBeats (55 %)**, por debajo del objetivo del 80 %.
+- Los huecos están repartidos por todos los lotes (ningún lote vacío): no es un fallo de las peticiones, sino **temas que no están en el catálogo de ReccoBeats**, concentrados en música en español (Pablo López, Pereza, Love of Lesbian…).
+- Aun así, con toda la biblioteca se cubren las 4 recetas de 60′.
+- Siguiente paso: probar [GetSongBPM](https://getsongbpm.com/api) como segunda fuente solo para los temas sin BPM (búsqueda por título y artista). Es gratuita con clave, a cambio de enlazarles desde la app. El script ya la usa si existe `GETSONGBPM_API_KEY`.
+
 ## Pruebas 1 y 3: qué debe hacer la app mínima
 
 Una sola pantalla con:

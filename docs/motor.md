@@ -10,7 +10,7 @@ El motor convierte una receta y una mezcla en un plan de sesión, mantiene viva 
 4. **Caché permanente**: el BPM de un tema no cambia; solo se analizan temas nuevos.
 5. **Progresivo**: se puede crear mezclas y sesiones con lo ya analizado mientras el resto termina.
 
-No podemos calcular el BPM nosotros: Spotify no da acceso al audio ni a *previews* para apps nuevas. Si ReccoBeats no cubre lo suficiente, la alternativa es Tunebat (de pago). La cobertura real se mide en la fase 0 ([Plan](plan.md)).
+No podemos calcular el BPM nosotros: Spotify no da acceso al audio ni a *previews* para apps nuevas. Medido en la fase 0: ReccoBeats cubre el 55 % de la biblioteca de prueba, con huecos en música en español. Por eso se evalúa una **segunda fuente para lo que falte**: GetSongBPM (búsqueda por título y artista; gratuita con enlace de atribución en la app), aceptando el resultado solo si el artista coincide. Tunebat queda como alternativa de pago. Cada tema guarda `bpm_fuente`.
 
 ### Mezclas sugeridas (onboarding)
 

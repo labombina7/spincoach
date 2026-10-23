@@ -7,6 +7,7 @@ Solo usa la librería estándar de Python (3.9+).
 
 Uso:
     export SPOTIFY_CLIENT_ID=<client id de tu app en developer.spotify.com>
+    export GETSONGBPM_API_KEY=<opcional: clave de getsongbpm.com, 2.ª fuente para lo que no tenga ReccoBeats>
     python3 tools/bpm_coverage.py
 
 Requisito en el dashboard de Spotify: añade la Redirect URI
@@ -197,13 +198,59 @@ def bpms_reccobeats(ids):
     return resultado
 
 
+# ---------------------------------------------------------------- GetSongBPM (2.ª fuente)
+import re
+import unicodedata
+
+
+def _norm(txt):
+    txt = unicodedata.normalize("NFKD", txt or "").encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9 ]+", " ", txt).strip()
+
+
+def _titulo_limpio(titulo):
+    # Quita "- Remastered…", "(feat. …)", "- Canción original de…" que empeoran la búsqueda.
+    titulo = re.split(r"\s+-\s+", titulo)[0]
+    return re.sub(r"\s*[\(\[].*?[\)\]]", "", titulo).strip()
+
+
+def bpms_getsongbpm(temas, api_key):
+    """Busca por título + artista principal. Se acepta el resultado solo si el artista coincide."""
+    resultado = {}
+    for n, t in enumerate(temas, 1):
+        titulo = _titulo_limpio(t["titulo"])
+        artista = t["artistas"].split(",")[0].strip()
+        lookup = f"song:{titulo} artist:{artista}"
+        url = "https://api.getsongbpm.com/search/?" + urllib.parse.urlencode(
+            {"api_key": api_key, "type": "both", "lookup": lookup})
+        try:
+            data = http_json(url)
+        except RuntimeError as e:
+            print(f"  {t['titulo']}: {e}")
+            continue
+        candidatos = data.get("search") if isinstance(data, dict) else None
+        if isinstance(candidatos, list):
+            for c in candidatos:
+                nombre = (c.get("artist") or {}).get("name", "")
+                if _norm(artista) and _norm(artista) in _norm(nombre) and c.get("tempo"):
+                    try:
+                        resultado[t["id"]] = float(c["tempo"])
+                    except (TypeError, ValueError):
+                        pass
+                    break
+        if n % 20 == 0:
+            print(f"  {n}/{len(temas)} buscados, {len(resultado)} encontrados")
+        time.sleep(0.4)
+    return resultado
+
+
 # ---------------------------------------------------------------- Cobertura
 def encaja(bpm, bloque):
     lo, hi = bloque["bpm_min"] * (1 - TOLERANCIA), bloque["bpm_max"] * (1 + TOLERANCIA)
     return any(lo <= t <= hi for t in (bpm, bpm * 2, bpm / 2))
 
 
-def informe(temas, bpm):
+def informe(temas, bpm, fuente):
     bloques = {b["id"]: b for b in json.loads((ROOT / "data" / "bloques.json").read_text())["bloques"]}
     recetas = json.loads((ROOT / "data" / "recetas.json").read_text())["recetas"]
     con_bpm = [t for t in temas if t["id"] in bpm]
@@ -211,6 +258,10 @@ def informe(temas, bpm):
     pct = 100 * len(con_bpm) / max(1, len(temas))
     print(f"Temas importados: {len(temas)} · con BPM: {len(con_bpm)} ({pct:.0f} %)"
           f" · objetivo fase 0: ≥ 80 %")
+    por_fuente = {}
+    for t in con_bpm:
+        por_fuente[fuente[t["id"]]] = por_fuente.get(fuente[t["id"]], 0) + 1
+    print("  por fuente: " + ", ".join(f"{k} {v}" for k, v in por_fuente.items()))
 
     minutos_bloque = {}
     print("\nMinutos de música que encajan por bloque:")
@@ -231,10 +282,10 @@ def informe(temas, bpm):
 
     OUT.mkdir(parents=True, exist_ok=True)
     with open(OUT / "temas.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["id", "titulo", "artistas", "duracion_s", "bpm"])
+        w = csv.DictWriter(f, fieldnames=["id", "titulo", "artistas", "duracion_s", "bpm", "fuente"])
         w.writeheader()
         for t in temas:
-            w.writerow({**t, "bpm": bpm.get(t["id"], "")})
+            w.writerow({**t, "bpm": bpm.get(t["id"], ""), "fuente": fuente.get(t["id"], "")})
     print(f"\nDetalle por tema en {OUT / 'temas.csv'}")
 
 
@@ -249,7 +300,17 @@ def main():
     if not bpm:
         print(f"\nReccoBeats no devolvió ningún BPM reconocible. Revisa {OUT / 'reccobeats_muestra.json'}"
               " para ver la forma real de la respuesta y ajusta bpms_reccobeats().")
-    informe(temas, bpm)
+    fuente = {sid: "reccobeats" for sid in bpm}
+    gs_key = os.environ.get("GETSONGBPM_API_KEY")
+    faltan = [t for t in temas if t["id"] not in bpm]
+    if gs_key and faltan:
+        print(f"\nBuscando en GetSongBPM los {len(faltan)} temas sin BPM…")
+        extra = bpms_getsongbpm(faltan, gs_key)
+        bpm.update(extra)
+        fuente.update({sid: "getsongbpm" for sid in extra})
+    elif faltan:
+        print(f"\n{len(faltan)} temas sin BPM. Define GETSONGBPM_API_KEY para probar una 2.ª fuente.")
+    informe(temas, bpm, fuente)
 
 
 if __name__ == "__main__":
