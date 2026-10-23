@@ -38,3 +38,8 @@ Eliges una **combinación** (tipo de entrenamiento + mezcla musical, p. ej. «HI
 ## Diseño UX
 
 Prototipo de 7 pantallas (inicio, diseñar sesión, música y coach, en sesión, conectar Spotify, mezcla musical, renovar combinación) en un lienzo de Claude Design, privado del autor.
+
+## Créditos
+
+- Datos de tempo (BPM) proporcionados por [GetSongBPM](https://getsongbpm.com) y [ReccoBeats](https://reccobeats.com).
+- Música y reproducción a través de [Spotify](https://www.spotify.com).
