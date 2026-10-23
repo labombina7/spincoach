@@ -1,0 +1,816 @@
+{
+  "version": 1,
+  "recetas": [
+    {
+      "tipo": "Continuo",
+      "duracion_min": 15,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 4
+        },
+        {
+          "orden": 2,
+          "fase": "Base",
+          "bloque": "LLA",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Ondulación",
+          "bloque": "TEM",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 3
+        }
+      ]
+    },
+    {
+      "tipo": "Continuo",
+      "duracion_min": 30,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 6
+        },
+        {
+          "orden": 2,
+          "fase": "Ciclo 1",
+          "bloque": "LLA",
+          "minutos": 6
+        },
+        {
+          "orden": 3,
+          "fase": "Ciclo 1",
+          "bloque": "TEM",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Ciclo 2",
+          "bloque": "LLA",
+          "minutos": 5
+        },
+        {
+          "orden": 5,
+          "fase": "Ciclo 2",
+          "bloque": "SSU",
+          "minutos": 4
+        },
+        {
+          "orden": 6,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 5
+        }
+      ]
+    },
+    {
+      "tipo": "Continuo",
+      "duracion_min": 45,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 8
+        },
+        {
+          "orden": 2,
+          "fase": "Ciclo 1",
+          "bloque": "LLA",
+          "minutos": 7
+        },
+        {
+          "orden": 3,
+          "fase": "Ciclo 1",
+          "bloque": "TEM",
+          "minutos": 5
+        },
+        {
+          "orden": 4,
+          "fase": "Ciclo 2",
+          "bloque": "LLA",
+          "minutos": 6
+        },
+        {
+          "orden": 5,
+          "fase": "Ciclo 2",
+          "bloque": "SSU",
+          "minutos": 5
+        },
+        {
+          "orden": 6,
+          "fase": "Ciclo 3",
+          "bloque": "LLA",
+          "minutos": 5
+        },
+        {
+          "orden": 7,
+          "fase": "Ciclo 3",
+          "bloque": "TEM",
+          "minutos": 4
+        },
+        {
+          "orden": 8,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 5
+        }
+      ]
+    },
+    {
+      "tipo": "Continuo",
+      "duracion_min": 60,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 8
+        },
+        {
+          "orden": 2,
+          "fase": "Ciclo 1",
+          "bloque": "LLA",
+          "minutos": 8
+        },
+        {
+          "orden": 3,
+          "fase": "Ciclo 1",
+          "bloque": "TEM",
+          "minutos": 6
+        },
+        {
+          "orden": 4,
+          "fase": "Ciclo 2",
+          "bloque": "LLA",
+          "minutos": 8
+        },
+        {
+          "orden": 5,
+          "fase": "Ciclo 2",
+          "bloque": "SSU",
+          "minutos": 6,
+          "nota": "Subida suave: rueda 5-6, sin apretar"
+        },
+        {
+          "orden": 6,
+          "fase": "Ciclo 3",
+          "bloque": "LLA",
+          "minutos": 8
+        },
+        {
+          "orden": 7,
+          "fase": "Ciclo 3",
+          "bloque": "TEM",
+          "minutos": 6
+        },
+        {
+          "orden": 8,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 10
+        }
+      ]
+    },
+    {
+      "tipo": "Progresivo",
+      "duracion_min": 15,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 4
+        },
+        {
+          "orden": 2,
+          "fase": "Escalón 1",
+          "bloque": "TEM",
+          "minutos": 4,
+          "nota": "Sin escalón de llano: el calentamiento hace de base"
+        },
+        {
+          "orden": 3,
+          "fase": "Escalón 2",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 3
+        }
+      ]
+    },
+    {
+      "tipo": "Progresivo",
+      "duracion_min": 30,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 5
+        },
+        {
+          "orden": 2,
+          "fase": "Escalón 1",
+          "bloque": "LLA",
+          "minutos": 5
+        },
+        {
+          "orden": 3,
+          "fase": "Escalón 2",
+          "bloque": "TEM",
+          "minutos": 5
+        },
+        {
+          "orden": 4,
+          "fase": "Escalón 3",
+          "bloque": "SUS",
+          "minutos": 5
+        },
+        {
+          "orden": 5,
+          "fase": "Escalón 4",
+          "bloque": "SUP",
+          "minutos": 4
+        },
+        {
+          "orden": 6,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 6
+        }
+      ]
+    },
+    {
+      "tipo": "Progresivo",
+      "duracion_min": 45,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 5
+        },
+        {
+          "orden": 2,
+          "fase": "Escalón 1",
+          "bloque": "LLA",
+          "minutos": 7
+        },
+        {
+          "orden": 3,
+          "fase": "Escalón 2",
+          "bloque": "TEM",
+          "minutos": 8
+        },
+        {
+          "orden": 4,
+          "fase": "Escalón 3",
+          "bloque": "SUS",
+          "minutos": 8
+        },
+        {
+          "orden": 5,
+          "fase": "Escalón 4",
+          "bloque": "SUP",
+          "minutos": 6
+        },
+        {
+          "orden": 6,
+          "fase": "Final",
+          "bloque": "SPR",
+          "minutos": 4
+        },
+        {
+          "orden": 7,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 7
+        }
+      ]
+    },
+    {
+      "tipo": "Progresivo",
+      "duracion_min": 60,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 8
+        },
+        {
+          "orden": 2,
+          "fase": "Escalón 1",
+          "bloque": "LLA",
+          "minutos": 10
+        },
+        {
+          "orden": 3,
+          "fase": "Escalón 2",
+          "bloque": "TEM",
+          "minutos": 10
+        },
+        {
+          "orden": 4,
+          "fase": "Escalón 3",
+          "bloque": "SUS",
+          "minutos": 10
+        },
+        {
+          "orden": 5,
+          "fase": "Escalón 4",
+          "bloque": "SUP",
+          "minutos": 8
+        },
+        {
+          "orden": 6,
+          "fase": "Final",
+          "bloque": "SPR",
+          "minutos": 6
+        },
+        {
+          "orden": 7,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 8
+        }
+      ]
+    },
+    {
+      "tipo": "HIIT",
+      "duracion_min": 15,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 3
+        },
+        {
+          "orden": 2,
+          "fase": "Serie 1",
+          "bloque": "I20",
+          "minutos": 3,
+          "nota": "Tabata corto: 6 rondas de 20/10 por serie"
+        },
+        {
+          "orden": 3,
+          "fase": "Serie 1",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 4,
+          "fase": "Serie 2",
+          "bloque": "I20",
+          "minutos": 3
+        },
+        {
+          "orden": 5,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 3
+        }
+      ]
+    },
+    {
+      "tipo": "HIIT",
+      "duracion_min": 30,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 6
+        },
+        {
+          "orden": 2,
+          "fase": "Activación progresiva",
+          "bloque": "TEM",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Serie 1",
+          "bloque": "I40",
+          "minutos": 4,
+          "nota": "Intensidad creciente: 40/20 y remate en 20/10"
+        },
+        {
+          "orden": 4,
+          "fase": "Serie 1",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 5,
+          "fase": "Serie 2",
+          "bloque": "I20",
+          "minutos": 4
+        },
+        {
+          "orden": 6,
+          "fase": "Serie 2",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 7,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 6
+        }
+      ]
+    },
+    {
+      "tipo": "HIIT",
+      "duracion_min": 45,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 8
+        },
+        {
+          "orden": 2,
+          "fase": "Activación progresiva",
+          "bloque": "LLA",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Activación progresiva",
+          "bloque": "TEM",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Serie 1",
+          "bloque": "I30",
+          "minutos": 4,
+          "nota": "Escalera de protocolos: 30/30 → 40/20 → 20/10 (Tabata al final)"
+        },
+        {
+          "orden": 5,
+          "fase": "Serie 1",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 6,
+          "fase": "Serie 2",
+          "bloque": "I40",
+          "minutos": 4
+        },
+        {
+          "orden": 7,
+          "fase": "Serie 2",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 8,
+          "fase": "Serie 3",
+          "bloque": "I20",
+          "minutos": 4
+        },
+        {
+          "orden": 9,
+          "fase": "Serie 3",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 10,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 8
+        }
+      ]
+    },
+    {
+      "tipo": "HIIT",
+      "duracion_min": 60,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 10
+        },
+        {
+          "orden": 2,
+          "fase": "Activación progresiva",
+          "bloque": "LLA",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Activación progresiva",
+          "bloque": "TEM",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Serie 1",
+          "bloque": "I30",
+          "minutos": 4
+        },
+        {
+          "orden": 5,
+          "fase": "Serie 1",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 6,
+          "fase": "Serie 2",
+          "bloque": "I40",
+          "minutos": 4
+        },
+        {
+          "orden": 7,
+          "fase": "Serie 2",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 8,
+          "fase": "Serie 3",
+          "bloque": "I20",
+          "minutos": 4
+        },
+        {
+          "orden": 9,
+          "fase": "Serie 3",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 10,
+          "fase": "Apoyo",
+          "bloque": "TEM",
+          "minutos": 6,
+          "nota": "Apoyo tras las series: mantener Z3-Z4 sin buscar el máximo"
+        },
+        {
+          "orden": 11,
+          "fase": "Apoyo",
+          "bloque": "SUS",
+          "minutos": 6
+        },
+        {
+          "orden": 12,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 9
+        }
+      ]
+    },
+    {
+      "tipo": "Escalada",
+      "duracion_min": 15,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 4
+        },
+        {
+          "orden": 2,
+          "fase": "Subida 1",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Subida 1",
+          "bloque": "SUR",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 3
+        }
+      ]
+    },
+    {
+      "tipo": "Escalada",
+      "duracion_min": 30,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 6
+        },
+        {
+          "orden": 2,
+          "fase": "Subida 1",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Subida 1",
+          "bloque": "SUP",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Entre subidas",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 5,
+          "fase": "Subida 2",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 6,
+          "fase": "Subida 2",
+          "bloque": "SUR",
+          "minutos": 4
+        },
+        {
+          "orden": 7,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 5
+        }
+      ]
+    },
+    {
+      "tipo": "Escalada",
+      "duracion_min": 45,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 6
+        },
+        {
+          "orden": 2,
+          "fase": "Activación",
+          "bloque": "LLA",
+          "minutos": 4
+        },
+        {
+          "orden": 3,
+          "fase": "Subida 1",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Subida 1",
+          "bloque": "SUP",
+          "minutos": 4
+        },
+        {
+          "orden": 5,
+          "fase": "Entre subidas",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 6,
+          "fase": "Subida 2",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 7,
+          "fase": "Subida 2",
+          "bloque": "SUP",
+          "minutos": 4
+        },
+        {
+          "orden": 8,
+          "fase": "Entre subidas",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 9,
+          "fase": "Subida 3",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 10,
+          "fase": "Subida 3",
+          "bloque": "SUR",
+          "minutos": 4
+        },
+        {
+          "orden": 11,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 5
+        }
+      ]
+    },
+    {
+      "tipo": "Escalada",
+      "duracion_min": 60,
+      "fases": [
+        {
+          "orden": 1,
+          "fase": "Calentamiento",
+          "bloque": "CAL",
+          "minutos": 8
+        },
+        {
+          "orden": 2,
+          "fase": "Activación",
+          "bloque": "LLA",
+          "minutos": 5
+        },
+        {
+          "orden": 3,
+          "fase": "Subida 1",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 4,
+          "fase": "Subida 1",
+          "bloque": "SUP",
+          "minutos": 4
+        },
+        {
+          "orden": 5,
+          "fase": "Entre subidas",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 6,
+          "fase": "Subida 2",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 7,
+          "fase": "Subida 2",
+          "bloque": "SUP",
+          "minutos": 4
+        },
+        {
+          "orden": 8,
+          "fase": "Entre subidas",
+          "bloque": "REC",
+          "minutos": 3
+        },
+        {
+          "orden": 9,
+          "fase": "Subida 3",
+          "bloque": "SUS",
+          "minutos": 4
+        },
+        {
+          "orden": 10,
+          "fase": "Subida 3",
+          "bloque": "SUR",
+          "minutos": 4,
+          "nota": "Remate: rueda 8-9, la que pueda cada uno"
+        },
+        {
+          "orden": 11,
+          "fase": "Apoyo",
+          "bloque": "TEM",
+          "minutos": 8
+        },
+        {
+          "orden": 12,
+          "fase": "Calma",
+          "bloque": "CLM",
+          "minutos": 9
+        }
+      ]
+    }
+  ]
+}
