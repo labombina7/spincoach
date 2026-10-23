@@ -45,9 +45,13 @@ MARGEN_COBERTURA = 1.5
 
 
 # ---------------------------------------------------------------- HTTP helpers
+USER_AGENT = "SpinCoach/0.1 (uso personal)"  # ReccoBeats (Cloudflare) bloquea el de Python-urllib
+
+
 def http_json(url, headers=None, data=None, method=None):
+    headers = {"User-Agent": USER_AGENT, **(headers or {})}
     for intento in range(6):
-        req = urllib.request.Request(url, headers=headers or {}, data=data, method=method)
+        req = urllib.request.Request(url, headers=headers, data=data, method=method)
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read().decode() or "null")

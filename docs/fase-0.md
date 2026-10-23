@@ -46,7 +46,7 @@ Abre el navegador para autorizar, importa tus canciones guardadas y tus playlist
 - minutos de música que encajan en cada uno de los 13 bloques;
 - si con toda tu biblioteca se cubren las recetas de 60′ de cada tipo (regla de 1,5×).
 
-La forma exacta de la API de ReccoBeats (ruta y nº de IDs por petición) está **por confirmar**: el script guarda una respuesta cruda en `tools/out/reccobeats_muestra.json`. Si no reconoce ningún BPM, esa muestra dice cómo ajustarlo. Los resultados (`tools/out/`) no se suben al repositorio.
+API de ReccoBeats confirmada el 23-10-2026: `GET https://api.reccobeats.com/v1/audio-features?ids=<IDs de Spotify>`, sin autenticación; cada elemento de `content` trae `href` (enlace al tema en Spotify) y `tempo`. **Rechaza (403, error 1010 de Cloudflare) el User-Agent por defecto de Python**: hay que enviar uno propio, también desde la app iOS. El nº máximo de IDs por petición sigue por confirmar (el script usa 40). El script guarda una respuesta cruda en `tools/out/reccobeats_muestra.json`. Los resultados (`tools/out/`) no se suben al repositorio.
 
 ## Pruebas 1 y 3: qué debe hacer la app mínima
 
