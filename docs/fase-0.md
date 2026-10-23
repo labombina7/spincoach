@@ -54,6 +54,7 @@ API de ReccoBeats confirmada el 23-10-2026: `GET https://api.reccobeats.com/v1/a
 - Los huecos están repartidos por todos los lotes (ningún lote vacío): no es un fallo de las peticiones, sino **temas que no están en el catálogo de ReccoBeats**, concentrados en música en español (Pablo López, Pereza, Love of Lesbian…).
 - Aun así, con toda la biblioteca se cubren las 4 recetas de 60′.
 - Siguiente paso: probar [GetSongBPM](https://getsongbpm.com/api) como segunda fuente solo para los temas sin BPM (búsqueda por título y artista). Es gratuita con clave, a cambio de enlazarles desde la app. El script ya la usa si existe `GETSONGBPM_API_KEY`.
+- Estado (23-10-2026): solicitada la clave con backlink en [labombina7.github.io/spincoach](https://labombina7.github.io/spincoach/) (GitHub Pages desde `/docs`). Pendiente de que llegue por email; no bloquea la fase 0.
 
 ## Pruebas 1 y 3: qué debe hacer la app mínima
 
